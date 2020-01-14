@@ -15,6 +15,31 @@ Route::get('/', function () {
     return Buku::all(); 
 });
 
+Route::get('contoh', 'ContohController@latihan1');
+
+Route::get('profil', 'ContohController@latihan2');
+
+Route::get('profil2', 'ContohController@latihan3');
+
+Route::get('profil3', 'ContohController@latihan4');
+
+Route::get('biodata', 'ContohController@Biodata');
+
+Route::get('musik', 'ContohController@musik');
+
+//menggunakan optional
+Route::get('pesan/{makanan?}/{minuman?}/{harga?}', 'ContohController@pesanan');
+
+//crud buku
+Route::get('get-buku', 'BukuController@index');
+Route::get('create-buku', 'BukuController@buat_data');
+Route::get('get-buku/{id}', 'BukuController@show');
+Route::get('delete-buku/{id}', 'BukuController@delete');
+Route::get('update-buku/{id}', 'BukuController@update');
+
+Route::get('hitung-buku', 'BukuController@hitungbuku');
+
+
 Route::get('halo', function () {
     return 'hello';
 });
@@ -23,7 +48,7 @@ Route::get('pesan', function(){
     return 'ini adalah sebuah pesan';
 });
 
-route::get('komentar', function(){
+Route::get('komentar', function(){
     return 'sebuah halaman komentar';
 });
 
