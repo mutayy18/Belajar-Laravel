@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePembuatsTable extends Migration
+class BuatTableWali extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreatePembuatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Pembuats', function (Blueprint $table) {
+        Schema::create('walis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('judul')->unique();
-            $table->integer('jumlah_halaman')->default(30);
-            $table->text('synopsis')->nullable();
-            $table->string('tanggal_pembuat')->nullable();
-            $table->string('tanggal_penerbit')->nullable();
+            $table->string('nama');
+	        $table->unsignedBigInteger('id_mahasiswa');
+        	$table->foreign('id_mahasiswa')->references('id')->on('mahasiswas')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreatePembuatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pembuats');
+        Schema::dropIfExists('walis');
     }
 }

@@ -10,11 +10,11 @@ class BukuController extends Controller
     //
     public function index(){
         $buku = Buku::all();
-        return $buku;
+        return view('buku.index',compact('buku'));
     }
-    public function show(){
+    public function show($id){
         $buku = Buku::find($id);
-        return $buku;
+        return view('buku.show',compact('buku'));
     }
     public function hitungbuku(){
         $buku = Buku::count();
@@ -31,9 +31,9 @@ class BukuController extends Controller
         $buku->save();
         return $buku;
     }
-    public function update($id){
+    public function update($id, $judul){
         $buku = Buku::find($id);
-        $buku->judul = "Buku update";
+        $buku->judul = $judul;
         $buku->jumlah_halaman = 2000;
         $buku->penerbit = 'CV lorem inpum';
         $buku->synopsis = 'lorem inpum';

@@ -33,7 +33,7 @@ class BukuSeeder extends Seeder
         $buku->judul = 'novel';
         $buku->jumlah_halaman = 380;
         $buku->penerbit = 'Grandmedia pustaka';
-        $buku->synopsis = 'ini adalah sebuah novel romantis...';
+        $buku->synopsis = 'ini adalah novel ...';
         $buku->status = 3;
         $buku->save();
 
@@ -59,7 +59,7 @@ class BukuSeeder extends Seeder
         $buku->judul = 'komik';
         $buku->jumlah_halaman = 50;
         $buku->penerbit = 'Grandmedia pustaka';
-        $buku->synopsis = 'ini adalah sebuah komik hiburan anak remaja...';
+        $buku->synopsis = 'ini adalah komik...';
         $buku->status = 4;
         $buku->save();
 
